@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #b7aef2;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Rubik;
+
+    ::selection {
+        color: $white;
+        background: $purple;
+    }
+}
+
+p,
+h1,
+h2 {
+    margin: 0;
+}

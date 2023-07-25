@@ -1,0 +1,173 @@
+.home {
+    height: 100vh;
+    // background-color: #b7aef2;
+    color: $black;
+    transition: 0.2s;
+    position: relative;
+
+    .login {
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 2px 2px 20px -7px rgba(0, 0, 0, 0.509);
+        padding: 30px 20px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        form {
+            gap: 8px;
+        }
+
+        input {
+            background-color: #f2eeeb;
+            border-radius: 12px;
+            border: none;
+            padding: 10px 10px;
+            font-weight: 700;
+            font-size: 16px;
+
+            &:hover {
+                box-shadow: 0px 0px 5px #bebebe;
+                outline: none;
+            }
+
+            &:focus {
+                // background-color: #b7aef247;
+                box-shadow: inset 5px 5px 30px $purple,
+                    inset -20px -20px 60px #ffffff;
+                outline: none;
+            }
+
+        }
+
+        button,
+        input {
+            transition: 0.2s;
+
+            &:hover {
+                background-color: #b7aef258;
+            }
+        }
+
+        button {
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            background-color: $purple;
+            font-size: 16px;
+            margin-bottom: 50px;
+
+            &:hover {
+                color: $yellow;
+                cursor: pointer;
+            }
+
+            &:active {
+                box-shadow: inset 5px 5px 30px $purple,
+                    inset -20px -20px 60px #ffffff;
+            }
+        }
+
+
+
+    }
+
+    .color-line-wrapper {
+        position: absolute;
+        width: 100%;
+        bottom: 100px;
+        z-index: -1;
+        left: 20%;
+        transform: translateY(100%);
+        // justify-content: center;
+        align-items: center;
+
+        .color-line {
+            width: 15%;
+
+            @for $i from 1 through 4 {
+                &:nth-child(3n + #{$i}) {
+                    background-color: nth($colors, $i );
+                    // height: $height + ($i*20);
+                    height: 140px;
+                    border-radius: 0 0 30px 30px;
+                    transform: translateY(-100%);
+                    animation: drip 1s $delay*$i*0.2 1 forwards ease;
+                    box-shadow: 0px 0px 5px 1px rgba(128, 128, 128, 0.5);
+                }
+            }
+        }
+
+        @keyframes drip {
+            to {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .gradient {
+        position: absolute;
+        z-index: -2;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        background: linear-gradient(313deg, #f2b3d6, #d4cff7, #f2aeae, #f2e9ae, #f2eeeb);
+        background-size: 1000% 1000%;
+
+        -webkit-animation: move-gradient 70s ease infinite;
+        -moz-animation: move-gradient 70s ease infinite;
+        animation: move-gradient 70s ease infinite;
+
+        filter: blur(100px);
+
+        @-webkit-keyframes move-gradient {
+            0% {
+                background-position: 10% 0%
+            }
+
+            50% {
+                background-position: 91% 100%
+            }
+
+            100% {
+                background-position: 10% 0%
+            }
+        }
+
+        @-moz-keyframes move-gradient {
+            0% {
+                background-position: 10% 0%
+            }
+
+            50% {
+                background-position: 91% 100%
+            }
+
+            100% {
+                background-position: 10% 0%
+            }
+        }
+
+        @keyframes move-gradient {
+            0% {
+                background-position: 10% 0%
+            }
+
+            50% {
+                background-position: 91% 100%
+            }
+
+            100% {
+                background-position: 10% 0%
+            }
+        }
+
+    }
+}
