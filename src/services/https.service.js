@@ -10,9 +10,8 @@ class UserDataService {
     }
 
     find(query, by = "name", page = 0) {
-        return http.get(`users?${by}=${query}&page=${page}`);
+        return http.get(`?${by}=${query}&page=${page}`);
     }
-
 }
 
-export default new RestaurantDataService();
+export default new UserDataService();

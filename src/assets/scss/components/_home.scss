@@ -44,6 +44,58 @@
                 outline: none;
             }
 
+            &.error {
+                background-color: $error-red;
+                color: $error-red-dark;
+                box-shadow: inset 5px 5px 30px $error-red,
+                    inset -20px -20px 60px #ffffff;
+                animation: shake 0.5s 1 ease;
+                -webkit-animation: shake 0.5s 1 ease;
+            }
+
+            @keyframes shake {
+                20% {
+                    transform: translateX(-10px);
+                }
+
+                40% {
+                    transform: translateX(10px);
+                }
+
+                60% {
+                    transform: translateX(-5px);
+                }
+
+                80% {
+                    transform: translateX(5px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            @-webkit-keyframes shake {
+                20% {
+                    -webkit-transform: translateX(-10px);
+                }
+
+                40% {
+                    -webkit-transform: translateX(10px);
+                }
+
+                60% {
+                    -webkit-transform: translateX(-5px);
+                }
+
+                80% {
+                    -webkit-transform: translateX(5px);
+                }
+
+                100% {
+                    -webkit-transform: translateX(0);
+                }
+            }
         }
 
         button,
@@ -75,9 +127,34 @@
             }
         }
 
+        &::after {
+            position: absolute;
+            bottom: 0;
+            content: '';
+            min-height: 20px;
+            z-index: -1;
+            color: rgb(181, 1, 1);
+            background-color: $error-red;
+            box-shadow: 2px 2px 20px -4px rgba(0, 0, 0, 0.509);
+            width: 77%;
+            border-radius: 12px;
+            padding: 20px 10px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
 
+        &.error-email::after {
+            content: 'Email does not exist';
+            transform: translate(0, 55px);
+        }
 
+        &.error-pass::after {
+            content: 'Incorrent password';
+            transform: translate(0, 55px);
+        }
     }
+
+
 
     .color-line-wrapper {
         position: absolute;
