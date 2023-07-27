@@ -1,0 +1,33 @@
+.page-404-wrapper {
+    height: 100vh;
+
+    .page-404 {
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 2px 2px 20px -7px rgba(0, 0, 0, 0.509);
+        padding: 30px 20px;
+        background-color: white;
+        gap: 10px;
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 20px;
+            width: 100%;
+            text-align: left;
+        }
+    }
+
+    img {
+        user-select: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateX(15%);
+        width: 100%;
+        min-width: 550px;
+        max-width: 1300px;
+        z-index: -1;
+    }
+}
