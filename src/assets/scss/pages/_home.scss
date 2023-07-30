@@ -49,9 +49,8 @@
             content: 'Incorrent password';
             transform: translate(0, 55px);
         }
+       
     }
-
-
 
     .color-line-wrapper {
         position: absolute;
@@ -86,62 +85,63 @@
         }
     }
 
-    .gradient {
-        position: absolute;
-        z-index: -2;
-        width: 70%;
-        height: 70%;
-        border-radius: 50%;
-        background: linear-gradient(313deg, #f2b3d6, #d4cff7, #f2aeae, #f2e9ae, #f2eeeb);
-        background-size: 1000% 1000%;
-
-        -webkit-animation: move-gradient 70s ease infinite;
-        -moz-animation: move-gradient 70s ease infinite;
-        animation: move-gradient 70s ease infinite;
-
-        filter: blur(100px);
-
-        @-webkit-keyframes move-gradient {
-            0% {
-                background-position: 10% 0%
-            }
-
-            50% {
-                background-position: 91% 100%
-            }
-
-            100% {
-                background-position: 10% 0%
-            }
-        }
-
-        @-moz-keyframes move-gradient {
-            0% {
-                background-position: 10% 0%
-            }
-
-            50% {
-                background-position: 91% 100%
-            }
-
-            100% {
-                background-position: 10% 0%
-            }
-        }
-
-        @keyframes move-gradient {
-            0% {
-                background-position: 10% 0%
-            }
-
-            50% {
-                background-position: 91% 100%
-            }
-
-            100% {
-                background-position: 10% 0%
-            }
-        }
-
-    }
 }
+
+// .gradient {
+//     position: absolute;
+//     z-index: -2;
+//     width: 70%;
+//     height: 70%;
+//     border-radius: 50%;
+//     background: linear-gradient(313deg, #f2b3d6, #d4cff7, #f2aeae, #f2e9ae, #f2eeeb);
+//     background-size: 1000% 1000%;
+
+//     -webkit-animation: move-gradient 70s ease infinite;
+//     -moz-animation: move-gradient 70s ease infinite;
+//     animation: move-gradient 70s ease infinite;
+
+//     filter: blur(100px);
+
+//     @-webkit-keyframes move-gradient {
+//         0% {
+//             background-position: 10% 0%
+//         }
+
+//         50% {
+//             background-position: 91% 100%
+//         }
+
+//         100% {
+//             background-position: 10% 0%
+//         }
+//     }
+
+//     @-moz-keyframes move-gradient {
+//         0% {
+//             background-position: 10% 0%
+//         }
+
+//         50% {
+//             background-position: 91% 100%
+//         }
+
+//         100% {
+//             background-position: 10% 0%
+//         }
+//     }
+
+//     @keyframes move-gradient {
+//         0% {
+//             background-position: 10% 0%
+//         }
+
+//         50% {
+//             background-position: 91% 100%
+//         }
+
+//         100% {
+//             background-position: 10% 0%
+//         }
+//     }
+
+// }

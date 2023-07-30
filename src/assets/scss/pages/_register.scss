@@ -1,0 +1,54 @@
+.register-wrapper {
+    min-height: 100vh;
+
+    .register {
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 2px 2px 20px -7px rgba(0, 0, 0, 0.509);
+        padding: 30px 20px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        form {
+            gap: 8px;
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            content: '';
+            min-height: 20px;
+            z-index: -1;
+            color: rgb(181, 1, 1);
+            background-color: $error-red;
+            box-shadow: 2px 2px 20px -4px rgba(0, 0, 0, 0.509);
+            width: 77%;
+            border-radius: 12px;
+            padding: 20px 10px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        &.error-email::after {
+            content: 'Email does not exist';
+            transform: translate(0, 55px);
+        }
+
+        &.error-pass::after {
+            content: 'Incorrent password';
+            transform: translate(0, 55px);
+        }
+
+        &.error-pass-auth::after {
+            content: 'Passwords don\'t match';
+            transform: translate(0, 55px);
+        }
+    }
+}
