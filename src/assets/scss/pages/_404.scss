@@ -8,6 +8,7 @@
         padding: 30px 20px;
         background-color: white;
         gap: 10px;
+
         h1 {
             font-size: 40px;
         }
@@ -29,5 +30,28 @@
         min-width: 550px;
         max-width: 1300px;
         z-index: -1;
+    }
+
+    a {
+        border: none;
+        padding: 10px;
+        border-radius: 12px;
+        font-weight: 700;
+        background-color: $purple;
+        font-size: 16px;
+        margin-bottom: 50px;
+        transition: 0.2s;
+
+        &:hover {
+            color: $yellow;
+            cursor: pointer;            
+            background-color: #b7aef258;
+
+        }
+
+        &:active {
+            box-shadow: inset 5px 5px 30px $purple,
+                inset -20px -20px 60px #ffffff;
+        }
     }
 }

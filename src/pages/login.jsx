@@ -40,15 +40,15 @@ export const Login = () => {
     }
 
     return <section className="home flex column align-center justify-center">
-        <div className="gradient"/>
+        <div className="gradient" />
         <div className="login" ref={errorRef}>
             <h1>Login</h1>
             <form className="flex column" action="/form" autoComplete="new-password" onSubmit={handleForm}>
-                <input type="text" autoComplete="new-password" placeholder="Email" required onInput={handleErrorRemovals} onClick={handleErrorRemovals}/>
+                <input type="text" autoComplete="new-password" placeholder="Email" required onInput={handleErrorRemovals} onClick={handleErrorRemovals} />
                 <input type="password" autoComplete="new-password" placeholder="Password" required onInput={handleErrorRemovals} onClick={handleErrorRemovals} />
                 <button>Sign in</button>
             </form>
-
+            <a href="/register">New around?</a>
             {/* <div className="color-line-wrapper flex">
                 <div className="color-line line1" />
                 <div className="color-line line2" />

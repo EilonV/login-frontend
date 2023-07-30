@@ -1,9 +1,8 @@
-
 body {
     margin: 0;
     overflow: hidden;
     background-color: #b7aef2;
-    
+
 }
 
 * {
@@ -97,8 +96,7 @@ input {
 }
 
 button,
-input,
-a {
+input {
     transition: 0.2s;
 
     &:hover {
@@ -106,8 +104,7 @@ a {
     }
 }
 
-button,
-a {
+button {
     border: none;
     padding: 10px;
     border-radius: 12px;
@@ -127,9 +124,14 @@ a {
     }
 }
 
-a{
+a {
     text-decoration: none;
     margin: 0;
+    font-weight: 700;
+    color: $dark-purple;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 12px;
 }
 
 .gradient {

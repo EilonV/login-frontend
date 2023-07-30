@@ -56,6 +56,8 @@ export const Register = () => {
                 <input type="password" placeholder="Password confirm" minLength={6} required onKeyDown={(e) => { if (e.code === 'Space') e.preventDefault() }} onClick={handleErrorRemovals} onChange={handleErrorRemovals} />
                 <button>Sign up</button>
             </form>
+            <a href="/">Already a member?</a>
+
         </div>
         <div className="gradient" />
     </section>
