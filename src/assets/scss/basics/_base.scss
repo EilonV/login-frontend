@@ -21,6 +21,7 @@ h2 {
     margin: 0;
 }
 
+
 input {
     background-color: #f2eeeb;
     border-radius: 12px;
@@ -191,4 +192,16 @@ a {
         }
     }
 
+}
+
+
+.pass-wrapper {
+    position: relative;
+
+    img {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        width: 20px;
+    }
 }

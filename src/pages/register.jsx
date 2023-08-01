@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import httpsService from "../services/https.service"
-
+import eye from '../assets/images/eye.svg'
+import shutEye from '../assets/images/eye-off.svg'
 export const Register = () => {
     const errorRef = useRef()
 
@@ -24,7 +25,6 @@ export const Register = () => {
                 pass: pass.value
             }
             httpsService.postUser(user)
-                .then(console.log('success'))
         }
 
         console.log(user);
@@ -45,6 +45,16 @@ export const Register = () => {
         removePriorErrors()
     }
 
+    const showPass = (e) => {
+        if (e.target.nextSibling.type === 'password') {
+            e.target.src = eye
+            e.target.nextSibling.type = 'text'
+        }
+        else {
+            e.target.src = shutEye
+            e.target.nextSibling.type = 'password'
+        }
+    }
     return <section className="register-wrapper flex column align-center justify-center">
         <div className="register" ref={errorRef}>
             <h1>Register</h1>
@@ -52,8 +62,14 @@ export const Register = () => {
                 <input type="email" placeholder="Email" required />
                 <input type="text" name="fname" placeholder="First name" required />
                 <input type="text" name="lname" placeholder="Last name" required />
-                <input type="password" placeholder="Password" minLength={6} autoComplete="new-password" required onKeyDown={(e) => { if (e.code === 'Space') e.preventDefault() }} onClick={handleErrorRemovals} onChange={handleErrorRemovals} />
-                <input type="password" placeholder="Password confirm" minLength={6} required onKeyDown={(e) => { if (e.code === 'Space') e.preventDefault() }} onClick={handleErrorRemovals} onChange={handleErrorRemovals} />
+                <div className="pass-wrapper flex justify-center align-center">
+                    <img src={shutEye} alt="eye show password icon" onClick={showPass} />
+                    <input type="password" id="pass" placeholder="Password" minLength={6} autoComplete="new-password" required onKeyDown={(e) => { if (e.code === 'Space') e.preventDefault() }} onClick={handleErrorRemovals} onChange={handleErrorRemovals} />
+                </div>
+                <div className="pass-wrapper flex justify-center align-center">
+                    <img src={shutEye} alt="eye show password icon" onClick={showPass} />
+                    <input type="password" placeholder="Password confirm" minLength={6} required onKeyDown={(e) => { if (e.code === 'Space') e.preventDefault() }} onClick={handleErrorRemovals} onChange={handleErrorRemovals} />
+                </div>
                 <button>Sign up</button>
             </form>
             <a href="/">Already a member?</a>
