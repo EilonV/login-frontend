@@ -133,6 +133,10 @@ a {
     font-size: 14px;
     padding: 5px 10px;
     border-radius: 12px;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .gradient {

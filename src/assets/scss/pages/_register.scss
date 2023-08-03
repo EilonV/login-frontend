@@ -56,5 +56,10 @@
             content: 'Passwords don\'t match';
             transform: translate(0, 55px);
         }
+
+        &.error-email-exist::after {
+            content: 'User already exists';
+            transform: translate(0, 55px);
+        }
     }
 }

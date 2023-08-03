@@ -39,14 +39,12 @@
         font-weight: 700;
         background-color: $purple;
         font-size: 16px;
-        margin-bottom: 50px;
         transition: 0.2s;
 
         &:hover {
             color: $yellow;
             cursor: pointer;            
             background-color: #b7aef258;
-
         }
 
         &:active {

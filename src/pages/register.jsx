@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import httpsService from "../services/https.service"
+import { httpsService } from "../services/https.service"
 import eye from '../assets/images/eye.svg'
 import shutEye from '../assets/images/eye-off.svg'
 export const Register = () => {
@@ -12,27 +12,37 @@ export const Register = () => {
         let lname = e.target[2]
         let pass = e.target[3]
         let passAuth = e.target[4]
+        let userExist = false
 
+        httpsService.find(email.value, 'email')
+            .then((res) => {
+                if (res.data.users.length) userExist = true
+
+                if (pass.value !== passAuth.value) {
+                    addError(pass, 'pass')
+                    addError(passAuth, 'pass-auth')
+                }
+                else if (userExist) {
+                    addError(email, 'email-exist')
+                }
+                else {
+                    user = {
+                        email: email.value,
+                        name: fname.value.concat(' ', lname.value),
+                        pass: pass.value
+                    }
+                    httpsService.postUser(user)
+                }
+            })
         e.preventDefault()
-        if (pass.value !== passAuth.value) {
-            addError(pass)
-            addError(passAuth)
-        }
-        else {
-            user = {
-                email: email.value,
-                name: fname.value.concat(' ', lname.value),
-                pass: pass.value
-            }
-            httpsService.postUser(user)
-        }
+
 
         console.log(user);
     }
 
-    const addError = (el) => {
+    const addError = (el, type) => {
         removePriorErrors()
-        errorRef.current.classList.add(`error-pass-auth`)
+        errorRef.current.classList.add(`error-${type}`)
         el.classList.add('error')
     }
 
@@ -55,11 +65,12 @@ export const Register = () => {
             e.target.nextSibling.type = 'password'
         }
     }
+
     return <section className="register-wrapper flex column align-center justify-center">
         <div className="register" ref={errorRef}>
             <h1>Register</h1>
             <form className="flex column" action="/form" autoComplete="new-password" onSubmit={handleForm}>
-                <input type="email" placeholder="Email" required />
+                <input type="email" placeholder="Email" required onKeyDown={(e) => { if (e.code === 'Space') e.preventDefault() }} onClick={handleErrorRemovals} onChange={handleErrorRemovals} />
                 <input type="text" name="fname" placeholder="First name" required />
                 <input type="text" name="lname" placeholder="Last name" required />
                 <div className="pass-wrapper flex justify-center align-center">
